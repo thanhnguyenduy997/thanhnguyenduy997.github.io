@@ -77,6 +77,7 @@ var __accesstrade_smartwidget = {
 
         request.send();
     },
+
     render: function (resp_data) {
         var css = '<style type="text/css">';
         css += '*{\n' +
@@ -88,7 +89,7 @@ var __accesstrade_smartwidget = {
             '    background-color: #DF0101;\n' +
             '}\n' +
             '#header{\n' +
-            '    height: 100px;\n' +
+            '    height: 75px;\n' +
             '    padding: 0px;\n' +
             '    border-radius: ;\n' +
             '}\n' +
@@ -97,10 +98,11 @@ var __accesstrade_smartwidget = {
             '    height: 90px;\n' +
             '    position: relative;\n' +
             '    border-radius: 5px;\n' +
+            // '    border: 3px solid red;\n' +
             '}\n' +
             '.image{\n' +
             '    text-align: center;\n' +
-            '    margin-top: 5px;\n' +
+            '    margin-top: 10px;\n' +
             '    padding-left: 5px!important\n' +
             '}\n' +
             '.sale{\n' +
@@ -117,7 +119,7 @@ var __accesstrade_smartwidget = {
             '}\n' +
             '#header img {\n' +
             '    width: 298px;\n' +
-            '    height: 100px;\n' +
+            '    height: 66px;\n' +
             '}\n' +
             'img{\n' +
             '\n' +
@@ -138,8 +140,73 @@ var __accesstrade_smartwidget = {
             '    width: 110%!important;\n' +
             '    margin-left: -5%!important;\n' +
             '}\n' +
-            '\n';
+            '\n' +
+            '.flex-container {\n' +
+            '    display: flex;\n' +
+            '    flex-wrap: nowrap;\n' +
+            '    background-color: DodgerBlue;\n' +
+            '}\n' +
+            '\n' +
+            '.flex-container > div {\n' +
+            '    background-color: #f1f1f1;\n' +
+            '    width: 90px;\n' +
+            '    margin: 10px;\n' +
+            '    text-align: center;\n' +
+            '    line-height: 75px;\n' +
+            '    font-size: 30px;\n' +
+            '}\n' +
+            '\n' +
+            '@import "compass/css3";\n' +
+            '\n' +
+            '.flex-container {\n' +
+            '    padding: 0;\n' +
+            '    margin: 0;\n' +
+            '    list-style: none;\n' +
+            '\n' +
+            '    display: -webkit-box;\n' +
+            '    display: -moz-box;\n' +
+            '    display: -ms-flexbox;\n' +
+            '    display: -webkit-flex;\n' +
+            '    display: flex;\n' +
+            '\n' +
+            '    -webkit-flex-flow: row wrap;\n' +
+            '    justify-content: space-around;\n' +
+            '}\n' +
+            '\n' +
+            '.flex-item {\n' +
+            '    background: tomato;\n' +
+            '    padding: 5px;\n' +
+            '    width: 200px;\n' +
+            '    height: 150px;\n' +
+            '    margin-top: 10px;\n' +
+            '\n' +
+            '    line-height: 150px;\n' +
+            '    color: white;\n' +
+            '    font-weight: bold;\n' +
+            '    font-size: 3em;\n' +
+            '    text-align: center;\n' +
+            '}\n' +
+            '.price{\n' +
+            '    position: absolute;\n' +
+            '    top: 34px;\n' +
+            '    left: 15px;\n' +
+            '    color: white;\n' +
+            '    width: 70px;\n' +
+            '    background: red;\n' +
+            '    border-radius: 5px;\n' +
+
+            '    display: none;\n' +
+            '}\n' +
+            '.image:hover #content img{\n' +
+            '    border: 3px solid black;\n' +
+            '}\n' +
+            '.image:hover .price{\n' +
+            '    display: inline-block;\n' +
+            '     transition-duration: 0.9s;\n' +
+            '}';
         css += '</style>';
+
+
         // mĂ n hĂ¬nh nhá» áº©n atsw-widget-product-price width < 1024
         var html = '<div class="container" id="smart_widget" >\n' +
             '<div class="row">';
@@ -156,9 +223,25 @@ var __accesstrade_smartwidget = {
             var aff_link = product.affiliate_link + '&redirect_302=1';
             aff_link = aff_link.replace("go.starsnet.co", window.__at_smartwidget.tracking_domain);
             html += '<div class="col-md-4 col-4 image">\n' +
-                '<a href="' + aff_link + '"><img src="' + product.image + '" alt="" ></a>\n' +
-                '<div class="sale">- ' + Math.floor(product.discount_rate * 100) + '% </div>\n' +
-                '</div>';
+                '<a href="' + aff_link + '"><img src="' + product.image + '" alt="" ></a>';
+
+            if (product.discount_rate==0) {
+
+            }else{
+                html+= '<div class="sale">- ' + Math.floor(product.discount_rate * 100) + '% </div>';
+            }
+
+            var formatter = new Intl.NumberFormat('en-US', {
+                // style: 'currency',
+                // currency: 'USD',
+                minimumFractionDigits: 0,
+                // the default value for minimumFractionDigits depends on the currency
+                // and is usually already 2
+            });
+
+            html+= '<div class="price"> ' + formatter.format(product.price)  + 'đ </div>';
+
+                html+='</div>';
         } // end for loop
             html += '</div>\n' +
                 '</div>';

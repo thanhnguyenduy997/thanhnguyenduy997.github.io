@@ -190,8 +190,13 @@ var __accesstrade_smartwidget = {
         }
 
 
-        html += '</div>\n' +
-            '    <div id="banner"><img src="'+ window.__at_smartwidget.banner_slider_bottom +'" alt=""></div>\n';
+        html += '</div>';
+            if (window.__at_smartwidget.banner_slider_bottom == ''){
+
+            } else{
+        html+=  '    <div id="banner"><img src="'+ window.__at_smartwidget.banner_slider_bottom +'" alt=""></div>\n';
+
+            }
 
         document.getElementById('at-smartwidget-root').innerHTML = css + html;
     },

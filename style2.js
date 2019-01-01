@@ -67,7 +67,7 @@ var __accesstrade_smartwidget = {
             '        }\n' +
             '        #smart_widget{\n' +
             '            width: '+ width +'px;\n' +
-            '            border: 3px solid #B40404;\n' +
+            '            border: 3px solid '+window.__at_smartwidget.background_color+';\n' +
             '            display: flex;\n' +
             '            display: -webkit-box;\n' +
             '            display: -moz-box;\n' +
@@ -76,18 +76,20 @@ var __accesstrade_smartwidget = {
             '            -webkit-flex-flow: row wrap;\n' +
             '            justify-content: space-around;\n' +
             '            flex-direction: row;\n' +
-            '            background-color: #B40404;\n' +
+            '            background-color: '+window.__at_smartwidget.background_color+';\n' +
             '\n' +
             '        }\n' +
             '        #banner>img{\n' +
             '            width:'+ width +'px;\n' +
-            '            border: 3px solid #B40404;\n' +
+            '            border: 3px solid '+window.__at_smartwidget.background_color+';\n' +
             '        }\n' +
             '        .items{\n' +
             '            width: 90px;\n' +
             '            height: 90px;\n' +
             '            background: tomato;\n' +
-            '            margin-top: 5px;\n' +
+            '            margin-top: 1px;\n' +
+            '            margin-bottom: 3px;\n' +
+
             '        }\n' +
             '        .items img{\n' +
             '            width: 90px;\n' +
@@ -100,7 +102,20 @@ var __accesstrade_smartwidget = {
             '            background: red;\n' +
             '            position: relative;\n' +
             '            font-size: 13px;\n' +
-            '            top: -93px;\n' +
+            '            top: -89px;\n' +
+            '            left: 2px;\n' +
+            '            color: white;\n' +
+            '            border-radius: 5px;\n' +
+            '            z-index: 3;\n' +
+            '            margin-top: inherit;\n' +
+            '            z-index: 3;\n' +
+            '        }\n' +
+            '        .sale_no{\n' +
+            '            width: 35px;\n' +
+            '            height: 19px;\n' +
+            '            position: relative;\n' +
+            '            font-size: 13px;\n' +
+            '            top: -89px;\n' +
             '            left: 2px;\n' +
             '            color: white;\n' +
             '            border-radius: 5px;\n' +
@@ -153,6 +168,7 @@ var __accesstrade_smartwidget = {
                     '</a>';
 
                 if (product.discount_rate==0){
+                    html+= '            <div class="sale_no"></div>';
 
                 } else{
                     html+= '            <div class="sale"> - '+ Math.floor(product.discount_rate * 100) +'%</div>';
@@ -178,6 +194,7 @@ var __accesstrade_smartwidget = {
                     '</a>';
 
                 if (product.discount_rate==0){
+                    html+= '            <div class="sale_no">1</div>';
 
                 } else{
                     html+= '            <div class="sale"> - '+ Math.floor(product.discount_rate * 100) +'%</div>';

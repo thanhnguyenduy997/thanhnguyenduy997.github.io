@@ -201,7 +201,7 @@ var __accesstrade_smartwidget = {
 
                 }
 
-                html+='            <div class="price">'+ formatter.format(product.price)  +'đ</div>\n' +
+                html+='       <a href="'+ aff_link +'"><div class="price">'+ formatter.format(product.price)  +'đ</div></a>     \n' +
                     '        </div>';
             } // end for loop
         }

@@ -98,7 +98,7 @@ var __accesstrade_smartwidget = {
             '        }\n' +
             '        .sale{\n' +
             '            width: 35px;\n' +
-            '            height: 19px;\n' +
+            '            height: 16px;\n' +
             '            background: red;\n' +
             '            position: relative;\n' +
             '            font-size: 13px;\n' +
@@ -134,7 +134,7 @@ var __accesstrade_smartwidget = {
             '            display: none;\n' +
             '            z-index: 3;\n' +
             '            text-align: center;\n' +
-            '            width: 83px;\n' +
+            '            width: 76px;\n' +
             '        }\n' +
             '        .items:hover .price{\n' +
             '            display: inline-block;\n' +

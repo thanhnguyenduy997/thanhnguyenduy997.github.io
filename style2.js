@@ -59,7 +59,7 @@ var __accesstrade_smartwidget = {
 
     render: function (resp_data) {
         var css = '<style type="text/css">';
-        var width = window.__at_smartwidget.col * 90 + ((window.__at_smartwidget.col + 1) * 5 );
+        var width = window.__at_smartwidget.col * 90 + ((window.__at_smartwidget.col + 1) * 3 );
         console.log(width);
         css += '*{\n' +
             '            padding: 0px;\n' +

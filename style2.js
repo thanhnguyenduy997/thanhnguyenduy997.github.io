@@ -214,7 +214,7 @@ var __accesstrade_smartwidget = {
             if (window.__at_smartwidget.banner_slider_bottom == ''){
 
             } else{
-                html+=  '    <div id="banner"><img src="'+ window.__at_smartwidget.banner_slider_bottom +'" alt=""></div>\n';
+                html+=  ' <a href="'+ window.__at_smartwidget.link_banner +'"><div id="banner"><img src="'+ window.__at_smartwidget.banner_slider_bottom +'" alt=""></div></a> \n';
 
             }
         }

@@ -98,7 +98,7 @@ var __accesstrade_smartwidget = {
             '        }\n' +
             '        .sale{\n' +
             '            width: 35px;\n' +
-            '            height: 16px;\n' +
+            '            height: 15px;\n' +
             '            background: red;\n' +
             '            position: relative;\n' +
             '            font-size: 13px;\n' +

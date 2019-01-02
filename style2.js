@@ -194,7 +194,7 @@ var __accesstrade_smartwidget = {
                     '</a>';
 
                 if (product.discount_rate==0){
-                    html+= '            <div class="sale_no">1</div>';
+                    html+= '            <div class="sale_no"></div>';
 
                 } else{
                     html+= '            <div class="sale"> - '+ Math.floor(product.discount_rate * 100) +'%</div>';

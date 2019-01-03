@@ -76,9 +76,8 @@ var __accesstrade_smartwidget = {
             '            justify-content: space-around;\n' +
             '            flex-direction: row;\n' +
             '            background-color: ' + window.__at_smartwidget.background_color + ';\n' +
-            '\n' +
             '        }\n' +
-            '        .banner>img{\n' +
+            '        .banner img{\n' +
             '            width:' + width + 'px;\n' +
             '            border: 3px solid ' + window.__at_smartwidget.background_color + ';\n' +
             '        }\n' +

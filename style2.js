@@ -81,6 +81,9 @@ var __accesstrade_smartwidget = {
             '            width:' + width + 'px;\n' +
             '            border: 3px solid ' + window.__at_smartwidget.background_color + ';\n' +
             '        }\n' +
+            '        .banner1 img{\n' +
+            '            width:' + width + 'px;\n' +
+            '        }\n' +
             '        .items{\n' +
             '            width: 90px;\n' +
             '            height: 90px;\n' +
@@ -146,7 +149,7 @@ var __accesstrade_smartwidget = {
 
         var html = '<div id="smart_widget">';
         if (window.__at_smartwidget.banner_slider_top && window.__at_smartwidget.banner_slider_top != '') {
-            html += ' <a href="' + window.__at_smartwidget.link_banner_top + '"><div class="banner"><img src="' + window.__at_smartwidget.banner_slider_top + '" alt=""></div></a> \n';
+            html += ' <a href="' + window.__at_smartwidget.link_banner_top + '"><div class="banner1"><img src="' + window.__at_smartwidget.banner_slider_top + '" alt=""></div></a> \n';
 
         } else {
 

@@ -1,7 +1,7 @@
 "use strict";
 
 var __accesstrade_smartwidget = {
-    ENDPOINT_URI: "http://api.accesstrade.vn/v1/partner/product/search",
+    ENDPOINT_URI: "https://api.accesstrade.vn/v1/partner/product/search",
 
     init: function () {
         console.log("[Smart Widget] Initializing...");
@@ -60,7 +60,6 @@ var __accesstrade_smartwidget = {
     render: function (resp_data) {
         var css = '<style type="text/css">';
         var width = window.__at_smartwidget.col * 90 + ((window.__at_smartwidget.col + 1) * 3 );
-        console.log(width);
         css += '*{\n' +
             '            padding: 0px;\n' +
             '            margin: 0px;\n' +
@@ -151,73 +150,42 @@ var __accesstrade_smartwidget = {
         var i;
         // console.log(resp_data.length);
         var products_length = window.__at_smartwidget.col * window.__at_smartwidget.row;
-        console.log(products_length);
-        console.log(resp_data.length);
-        if (products_length > resp_data.length){
-            for (i = 0; i < resp_data.length; i++) {
-                var product = resp_data[i];
-                count_col++;
-                var formatter = new Intl.NumberFormat('en-US', {
-                    minimumFractionDigits: 0,
-                });
-                var aff_link = product.affiliate_link + '&redirect_302=1';
-                aff_link = aff_link.replace("go.starsnet.co", window.__at_smartwidget.tracking_domain);
-
-                html += '<div class="items">\n' +
-                    '<a href="'+ aff_link +'">' +
-                    '<img src="'+ product.image +'" alt="">' +
-                    '</a>';
-
-                if (product.discount_rate==0){
-                    html+= '            <div class="sale_no"></div>';
-
-                } else{
-                    html+= '            <div class="sale"> - '+ Math.floor(product.discount_rate * 100) +'%</div>';
-
-                }
-
-                html+='            <div class="price">'+ formatter.format(product.price)  +'đ</div>\n' +
-                    '        </div>';
-            }
+        var insert;
+        if (products_length>resp_data.length) {
+            insert=resp_data.length;
         }else{
-            for (i = 0; i < products_length; i++) {
-                var product = resp_data[i];
-                count_col++;
-                var formatter = new Intl.NumberFormat('en-US', {
-                    minimumFractionDigits: 0,
-                });
-                var aff_link = product.affiliate_link + '&redirect_302=1';
-                aff_link = aff_link.replace("go.starsnet.co", window.__at_smartwidget.tracking_domain);
-
-                html += '<div class="items">\n' +
-                    '<a href="'+ aff_link +'">' +
-                    '<img src="'+ product.image +'" alt="">' +
-                    '</a>';
-
-                if (product.discount_rate==0){
-                    html+= '            <div class="sale_no"></div>';
-
-                } else{
-                    html+= '            <div class="sale"> - '+ Math.floor(product.discount_rate * 100) +'%</div>';
-
-                }
-
-                html+='       <a href="'+ aff_link +'"><div class="price">'+ formatter.format(product.price)  +'đ</div></a>     \n' +
-                    '        </div>';
-            } // end for loop
+            insert=products_length;
         }
 
+        for (i = 0; i < insert; i++) {
+            var product = resp_data[i];
+            count_col++;
+            var formatter = new Intl.NumberFormat('en-US', {
+                minimumFractionDigits: 0,
+            });
+            var aff_link = product.affiliate_link + '&redirect_302=1';
+            aff_link = aff_link.replace("go.starsnet.co", window.__at_smartwidget.tracking_domain);
 
-        html += '</div>';
-        if (!window.__at_smartwidget.banner_slider_bottom){
+            html += '<div class="items">\n' +
+                '<a href="'+ aff_link +'">' +
+                '<img src="'+ product.image +'" alt="">' +
+                '</a>';
 
-        } else{
-            if (window.__at_smartwidget.banner_slider_bottom == ''){
+            if (product.discount_rate==0){
+                html+= '            <div class="sale_no"></div>';
 
             } else{
-                html+=  ' <a href="'+ window.__at_smartwidget.link_banner +'"><div id="banner"><img src="'+ window.__at_smartwidget.banner_slider_bottom +'" alt=""></div></a> \n';
+                html+= '            <div class="sale"> - '+ Math.floor(product.discount_rate * 100) +'%</div>';
 
             }
+
+            html+='            <div class="price">'+ formatter.format(product.price)  +'đ</div>\n' +
+                '        </div>';
+        }
+
+        html += '</div>';
+        if (window.__at_smartwidget.banner_slider_bottom && window.__at_smartwidget.banner_slider_bottom == ''){
+            html+=  ' <a href="'+ window.__at_smartwidget.link_banner +'"><div id="banner"><img src="'+ window.__at_smartwidget.banner_slider_bottom +'" alt=""></div></a> \n';
         }
 
 

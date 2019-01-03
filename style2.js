@@ -59,14 +59,14 @@ var __accesstrade_smartwidget = {
 
     render: function (resp_data) {
         var css = '<style type="text/css">';
-        var width = window.__at_smartwidget.col * 90 + ((window.__at_smartwidget.col + 1) * 3 );
+        var width = window.__at_smartwidget.col * 90 + ((window.__at_smartwidget.col + 1) * 3);
         css += '*{\n' +
             '            padding: 0px;\n' +
             '            margin: 0px;\n' +
             '        }\n' +
             '        #smart_widget{\n' +
-            '            width: '+ width +'px;\n' +
-            '            border: 3px solid '+window.__at_smartwidget.background_color+';\n' +
+            '            width: ' + width + 'px;\n' +
+            '            border: 3px solid ' + window.__at_smartwidget.background_color + ';\n' +
             '            display: flex;\n' +
             '            display: -webkit-box;\n' +
             '            display: -moz-box;\n' +
@@ -75,12 +75,12 @@ var __accesstrade_smartwidget = {
             '            -webkit-flex-flow: row wrap;\n' +
             '            justify-content: space-around;\n' +
             '            flex-direction: row;\n' +
-            '            background-color: '+window.__at_smartwidget.background_color+';\n' +
+            '            background-color: ' + window.__at_smartwidget.background_color + ';\n' +
             '\n' +
             '        }\n' +
             '        #banner>img{\n' +
-            '            width:'+ width +'px;\n' +
-            '            border: 3px solid '+window.__at_smartwidget.background_color+';\n' +
+            '            width:' + width + 'px;\n' +
+            '            border: 3px solid ' + window.__at_smartwidget.background_color + ';\n' +
             '        }\n' +
             '        .items{\n' +
             '            width: 90px;\n' +
@@ -144,17 +144,25 @@ var __accesstrade_smartwidget = {
 
 
         // mĂ n hĂ¬nh nhá» áº©n atsw-widget-product-price width < 1024
+
         var html = '<div id="smart_widget">';
+        if (window.__at_smartwidget.banner_slider_top && window.__at_smartwidget.banner_slider_top != '') {
+            html += ' <a href="' + window.__at_smartwidget.link_banner_top + '"><div id="banner"><img src="' + window.__at_smartwidget.banner_slider_top + '" alt=""></div></a> \n';
+
+        } else {
+
+        }
+
         var product_aff_link = '';
         var count_col = 0;
         var i;
         // console.log(resp_data.length);
         var products_length = window.__at_smartwidget.col * window.__at_smartwidget.row;
         var insert;
-        if (products_length>resp_data.length) {
-            insert=resp_data.length;
-        }else{
-            insert=products_length;
+        if (products_length > resp_data.length) {
+            insert = resp_data.length;
+        } else {
+            insert = products_length;
         }
 
         for (i = 0; i < insert; i++) {
@@ -167,33 +175,30 @@ var __accesstrade_smartwidget = {
             aff_link = aff_link.replace("go.starsnet.co", window.__at_smartwidget.tracking_domain);
 
             html += '<div class="items">\n' +
-                '<a href="'+ aff_link +'">' +
-                '<img src="'+ product.image +'" alt="">' +
+                '<a href="' + aff_link + '">' +
+                '<img src="' + product.image + '" alt="">' +
                 '</a>';
 
-            if (product.discount_rate==0){
-                html+= '            <div class="sale_no"></div>';
+            if (product.discount_rate == 0) {
+                html += '            <div class="sale_no"></div>';
 
-            } else{
-                html+= '            <div class="sale"> - '+ Math.floor(product.discount_rate * 100) +'%</div>';
+            } else {
+                html += '            <div class="sale"> - ' + Math.floor(product.discount_rate * 100) + '%</div>';
 
             }
 
-            html+='            <div class="price">'+ formatter.format(product.price)  +'đ</div>\n' +
+            html += '      <a href="' + aff_link + '"><div class="price">' + formatter.format(product.price) + 'đ</div></a>      \n' +
                 '        </div>';
         }
 
         html += '</div>';
-        if (!window.__at_smartwidget.banner_slider_bottom){
+        if (window.__at_smartwidget.banner_slider_bottom && window.__at_smartwidget.banner_slider_bottom != '') {
+            html += ' <a href="' + window.__at_smartwidget.link_banner_bottom + '"><div id="banner"><img src="' + window.__at_smartwidget.banner_slider_bottom + '" alt=""></div></a> \n';
 
-        } else{
-            if (window.__at_smartwidget.banner_slider_bottom == ''){
+        } else {
 
-            } else{
-                html+=  ' <a href="'+ window.__at_smartwidget.link_banner +'"><div id="banner"><img src="'+ window.__at_smartwidget.banner_slider_bottom +'" alt=""></div></a> \n';
-
-            }
         }
+
 
 
         document.getElementById('at-smartwidget-root').innerHTML = css + html;

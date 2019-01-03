@@ -96,11 +96,11 @@ var __accesstrade_smartwidget = {
             '            position: relative;\n' +
             '        }\n' +
             '        .sale{\n' +
-            '            width: 35px;\n' +
+            '            width: 30px;\n' +
             '            padding: 3px;\n' +
             '            background: red;\n' +
             '            position: relative;\n' +
-            '            font-size: 13px;\n' +
+            // '            font-size: 13px;\n' +
             '            top: -89px;\n' +
             '            left: 2px;\n' +
             '            color: white;\n' +
@@ -183,7 +183,7 @@ var __accesstrade_smartwidget = {
                 html += '            <div class="sale_no"></div>';
 
             } else {
-                html += '            <div class="sale"> - ' + Math.floor(product.discount_rate * 100) + '%</div>';
+                html += '            <div class="sale">' + Math.floor(product.discount_rate * 100) + '%</div>';
 
             }
 

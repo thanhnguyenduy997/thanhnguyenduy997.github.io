@@ -78,7 +78,7 @@ var __accesstrade_smartwidget = {
             '            background-color: ' + window.__at_smartwidget.background_color + ';\n' +
             '\n' +
             '        }\n' +
-            '        #banner>img{\n' +
+            '        .banner>img{\n' +
             '            width:' + width + 'px;\n' +
             '            border: 3px solid ' + window.__at_smartwidget.background_color + ';\n' +
             '        }\n' +
@@ -96,7 +96,7 @@ var __accesstrade_smartwidget = {
             '            position: relative;\n' +
             '        }\n' +
             '        .sale{\n' +
-            '            width: 30px;\n' +
+                '            width: 30px;\n' +
             '            padding: 3px;\n' +
             '            background: red;\n' +
             '            position: relative;\n' +
@@ -147,7 +147,7 @@ var __accesstrade_smartwidget = {
 
         var html = '<div id="smart_widget">';
         if (window.__at_smartwidget.banner_slider_top && window.__at_smartwidget.banner_slider_top != '') {
-            html += ' <a href="' + window.__at_smartwidget.link_banner_top + '"><div id="banner"><img src="' + window.__at_smartwidget.banner_slider_top + '" alt=""></div></a> \n';
+            html += ' <a href="' + window.__at_smartwidget.link_banner_top + '"><div class="banner"><img src="' + window.__at_smartwidget.banner_slider_top + '" alt=""></div></a> \n';
 
         } else {
 
@@ -193,7 +193,7 @@ var __accesstrade_smartwidget = {
 
         html += '</div>';
         if (window.__at_smartwidget.banner_slider_bottom && window.__at_smartwidget.banner_slider_bottom != '') {
-            html += ' <a href="' + window.__at_smartwidget.link_banner_bottom + '"><div id="banner"><img src="' + window.__at_smartwidget.banner_slider_bottom + '" alt=""></div></a> \n';
+            html += ' <a href="' + window.__at_smartwidget.link_banner_bottom + '"><div class="banner"><img src="' + window.__at_smartwidget.banner_slider_bottom + '" alt=""></div></a> \n';
 
         } else {
 

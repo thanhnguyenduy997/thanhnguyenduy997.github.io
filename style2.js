@@ -184,8 +184,15 @@ var __accesstrade_smartwidget = {
         }
 
         html += '</div>';
-        if (window.__at_smartwidget.banner_slider_bottom && window.__at_smartwidget.banner_slider_bottom == ''){
-            html+=  ' <a href="'+ window.__at_smartwidget.link_banner +'"><div id="banner"><img src="'+ window.__at_smartwidget.banner_slider_bottom +'" alt=""></div></a> \n';
+        if (!window.__at_smartwidget.banner_slider_bottom){
+
+        } else{
+            if (window.__at_smartwidget.banner_slider_bottom == ''){
+
+            } else{
+                html+=  ' <a href="'+ window.__at_smartwidget.link_banner +'"><div id="banner"><img src="'+ window.__at_smartwidget.banner_slider_bottom +'" alt=""></div></a> \n';
+
+            }
         }
 
 

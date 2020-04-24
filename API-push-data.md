@@ -29,7 +29,9 @@ Base URL : https://system.dinos.click/api/v1/push-data
 
     {
         "status": "success",
-        "data": "Push data Complete!"
+        "data": {
+            "order_id":52904
+        }
     }
 
 #  

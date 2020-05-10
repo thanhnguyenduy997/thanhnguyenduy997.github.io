@@ -14,7 +14,8 @@ Base URL : https://system.dinos.click/api/v1/push-data
         "name": "thanhtestzawa",
         "phone": "0986589123",
         "affiliate_network": "Zawa",
-        "address": "Ha Noi"
+        "address": "Ha Noi",
+        "subid": "abusma1005"
     }
 
 >RESPONSE:

@@ -11,11 +11,11 @@ Base URL : https://system.dinos.click/api/v1/push-data
 >BODY: 
 
     {	
-        "name": "thanhtestzawa",
+        "name": "thanhtestX-MARVEL",
         "phone": "0986589123",
-        "affiliate_network": "Zawa",
+        "affiliate_network": "X-MARVEL",
         "address": "Ha Noi",
-        "subid": "abusma1005"
+        "subid": "ikon2404"
     }
 
 >RESPONSE:

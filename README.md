@@ -1,16 +1,17 @@
 ## Post back APIs
 
-Base URL : https://system.dinos.click/api/v1/post-back-status
+Base URL : https://system.dinos.vn/api/v1/post_back_mosaic
 
 ### 1. Processing
 
->METHOD: GET
+>METHOD: POST
 
 >PARAMETER
 
     {	
     	"status": "hold",
-    	"sub_id": "click_id"
+    	"conversion": "click_id",
+        "note": "comment"
     }
 
 >BODY: NONE
@@ -40,7 +41,8 @@ Base URL : https://system.dinos.click/api/v1/post-back-status
 
     {	
     	"status": "reject",
-    	"sub_id": "click_id"
+    	"conversion": "click_id",
+        "note": "comment"
     }
 
 >BODY: NONE
@@ -70,7 +72,39 @@ Base URL : https://system.dinos.click/api/v1/post-back-status
 
     {	
     	"status": "sale",
-    	"sub_id": "click_id"
+    	"conversion": "click_id",
+        "note": "comment"
+    }
+
+>BODY: NONE
+
+>RESPONSE:
+>>1.Status: Error
+
+    {
+        "status": "error",
+        "data": "Request post back Fasle"
+    }
+        
+>>1.Status: Success
+
+    {
+        "status": "success",
+        "data": "Update Status Complete!"
+    }
+
+#  
+
+### 4. Processing
+
+>METHOD: POST
+
+>PARAMETER
+
+    {	
+    	"status": "processing",
+    	"conversion": "click_id",
+        "note": "comment"
     }
 
 >BODY: NONE

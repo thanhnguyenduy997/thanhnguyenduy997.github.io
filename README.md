@@ -1,8 +1,8 @@
 ## Post back APIs
 
-Base URL : https://system.dinos.vn/api/v1/post_back_mosaic
+Base URL : https://api.dinos.vn/api/v1/post_back_mosaic
 
-### 1. Processing
+### 1. Pending
 
 >METHOD: POST
 

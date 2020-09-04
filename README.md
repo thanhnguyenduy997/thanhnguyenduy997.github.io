@@ -36,7 +36,7 @@ Base URL : https://api.dinos.vn/api/v1/post_back_mosaic
 
 ### 2. Reject
 
->METHOD: GET
+>METHOD: POST
 
 >PARAMETER
 
@@ -68,7 +68,7 @@ Base URL : https://api.dinos.vn/api/v1/post_back_mosaic
 
 ### 3. Confirm
 
->METHOD: GET
+>METHOD: POST
 
 >PARAMETER
 

@@ -11,7 +11,8 @@ Base URL : https://api.dinos.vn/api/v1/post_back_mosaic
     {	
     	"status": "hold",
     	"conversion": "click_id",
-        "note": "comment"
+        "note": "comment",
+        "total_amount": "total_amount"
     }
 
 >BODY: NONE
@@ -42,7 +43,8 @@ Base URL : https://api.dinos.vn/api/v1/post_back_mosaic
     {	
     	"status": "reject",
     	"conversion": "click_id",
-        "note": "comment"
+        "note": "comment",
+        "total_amount": "total_amount"
     }
 
 >BODY: NONE
@@ -73,7 +75,8 @@ Base URL : https://api.dinos.vn/api/v1/post_back_mosaic
     {	
     	"status": "sale",
     	"conversion": "click_id",
-        "note": "comment"
+        "note": "comment",
+        "total_amount": "total_amount"
     }
 
 >BODY: NONE
@@ -104,7 +107,8 @@ Base URL : https://api.dinos.vn/api/v1/post_back_mosaic
     {	
     	"status": "processing",
     	"conversion": "click_id",
-        "note": "comment"
+        "note": "comment",
+        "total_amount": "total_amount"
     }
 
 >BODY: NONE
